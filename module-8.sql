@@ -62,4 +62,17 @@ WHERE age BETWEEN 18 AND 25;
 
 -- Retrieve rows using IN for a specific set of roll numbers.
 SELECT * FROM students
-WHERE department IN ('CSE')
+WHERE department IN ('CSE');
+
+-- Count how many students exist in the students table.
+
+SELECT count(*) FROM students;
+
+-- Find the average score of students in a specific department.
+SELECT avg(score) FROM students;
+
+-- Get the maximum and minimum age of all students.
+
+SELECT max(age) FROM students;
+
+SELECT min(age) FROM students;
