@@ -76,3 +76,13 @@ SELECT avg(score) FROM students;
 SELECT max(age) FROM students;
 
 SELECT min(age) FROM students;
+
+-- Update the status of students who scored less than 50 to 'failed'.
+UPDATE students
+set status = 'so bad'
+WHERE score<50
+
+SELECT * FROM students
+
+-- Use LIMIT and OFFSET to fetch the second page of results (5 per page)
+SELECT * FROM students LIMIT 5 OFFSET 5*1;
