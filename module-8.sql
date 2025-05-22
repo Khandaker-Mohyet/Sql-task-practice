@@ -9,6 +9,8 @@ CREATE TABLE students (
     last_login DATE
 );
 
+DROP TABLE students
+
 INSERT INTO students (roll, name, age, department, score, status, last_login) VALUES
 (101, 'Alice Ahmed', 21, 'CSE', 88.50, 'passed', '2025-05-10'),
 (102, 'Bilal Hossain', 22, 'EEE', 72.00, 'passed', '2025-05-11'),
@@ -38,3 +40,26 @@ CREATE TABLE courses (
 
 ALTER TABLE students
 DROP COLUMN age;
+
+-- Write a query to find all students who have a score greater than 80 and not null.
+
+SELECT * FROM students
+WHERE score>80 AND score IS NOT null;
+
+-- Use the NOT operator to exclude students from a specific department.
+
+SELECT * FROM students
+WHERE NOT department = 'CSE'
+
+-- Fetch students whose names start with ‘A’ using LIKE and ILIKE.
+
+SELECT * FROM students
+WHERE "name" LIKE 'A%'
+
+-- Select all students whose age is between 18 and 25.
+SELECT * FROM students
+WHERE age BETWEEN 18 AND 25;
+
+-- Retrieve rows using IN for a specific set of roll numbers.
+SELECT * FROM students
+WHERE department IN ('CSE')
