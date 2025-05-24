@@ -54,9 +54,17 @@ SELECT
     COUNT(*)
 FROM students
 GROUP BY login_month;
+
 SELECT
     TO_CHAR(last_login, 'YYYY-MM') AS login_month,
     COUNT(*)
 FROM students
 GROUP BY login_month
 HAVING COUNT(*) > 2;
+
+
+-- Create a foreign key constraint on department_id in the students table referencing departments(id).
+ALTER TABLE students
+ADD CONSTRAINT fk_students_department
+FOREIGN KEY (department_id)
+REFERENCES departments(id);
